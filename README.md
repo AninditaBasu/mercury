@@ -22,10 +22,6 @@ You need an API key from [Oxford Dictionaries API](https://developer.oxforddicti
 
 **Detailed instructions:** See the [Mercury documentation](https://aninditabasu.github.io/mercury/index.html).
 
-# Example implementation
-
-
-
 # How to contribute
 
 Log an issue with your suggestions. PRs welcome!
