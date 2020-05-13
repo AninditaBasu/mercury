@@ -1,0 +1,27 @@
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,{content:"";display:table;clear:both}
+.w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
+
+.w3-card-4{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+
+.w3-xlarge{font-size:24px!important}
+.w3-small{font-size:12px!important}
+.w3-right-align{text-align:right!important}
+.w3-margin{margin:16px!important}
+
+.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+
+.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+
+.w3-border{border:1px solid #ccc!important}
+
+
+/* colours */
+.w3-white{color:#000!important;background-color:#fff!important}
+.w3-sand{color:#000!important;background-color:#fdf5e6!important}
+.w3-text-theme {color:#673ab7 !important}
+.w3-border-theme {border-color:#673ab7 !important}
+.w3-hover-theme:hover {color:#fff !important; background-color:#673ab7 !important}
+.w3-theme-d3 {color:#fff !important; background-color:#482880 !important}
+.w3-theme-l1 {color:#fff !important; background-color:#845bcb !important}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ title }}</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+<div class="w3-container w3-sand">
+
+<div class="w3-panel">
+<h1 class="w3-text-theme">{{ title }}</h1>
+<h2 class="w3-text-theme">{{ language_pair }}</h2>
+<p>Powered by <a href="https://developer.oxforddictionaries.com/">Oxford Dictionaries API</a></p>
+<hr/>
+</div><!-- .div for header panel -->
+
+<div class="w3-panel">
+<form action="." method="POST" class="w3-container">
+<label class="w3-text-theme w3-xlarge">{{ translate_label }}</label>
+<input type="text" name="sourceword" placeholder="" class="w3-input w3-border w3-border-theme" style="width:30%">
+<p>&nbsp;</p>
+<input type="submit" name="word-get" value="{{ translate_button }}" class="w3-button w3-theme-d3 w3-hover-theme">
+</form>
+</div><!-- .div for form -->
+
+<footer class="w3-panel">
+<hr/>
+<p class="w3-small w3-right-align">Web app created by: Anindita Basu (ab.techwriter@gmail.com)</p>
+</footer>
+
+</div><!-- .div for body -->
+
+</body>
+
+</html>

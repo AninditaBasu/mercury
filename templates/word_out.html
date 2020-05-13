@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ title }}</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+<div class="w3-container w3-sand">
+
+<div class="w3-panel">
+<h1 class="w3-text-theme">{{ title }}</h1>
+<h2 class="w3-text-theme">{{ language_pair }}</h2>
+<p>Powered by <a href="https://developer.oxforddictionaries.com/">Oxford Dictionaries API</a></p>
+<hr/>
+</div><!-- .div for header panel -->
+
+<div class="w3-panel">
+<div class="w3-container">
+<h2 class="w3-text-theme">{{ word_id}}</h2>
+    <p class="w3-text-theme">Translations to English: <span class="w3-xlarge">{{ plain_list }}</span></p>
+<p class="w3-small w3-margin w3-right-align">{{ back_message }}</p>
+{% for item in trans %}
+<div class="w3-card-4 w3-border w3-border-theme">
+<header class="w3-container w3-white">
+    {% if item.Error %}
+    <p>{{ item.Error }}</p>
+    {% else %}
+    <h3><a href="https://www.lexico.com/definition/{{item.word_en}}" target="_blank">{{ item.word_en }}</a></h3>
+    {% endif %}
+</header>
+<div class="w3-container w3-white">{% if item.example %}
+<h4 class="w3-text-theme">Example sentences</h4>
+    {% for sentence in item.example %}
+    <p>- {{ sentence }}</p>
+    {% endfor %}{% endif %}
+</div><!-- .div example-sentence container -->
+    {% if item.sound %}
+<div class="w3-container w3-white">
+<h4 class="w3-text-theme">Pronunciation</h4>
+<p class="w3-margin">
+    <audio controls id="soundFile">
+    <source src="{{ item.sound }}" type="audio/mpeg">
+    <img src="../static/baseline_volume_down_black_18dp.png"/>
+    Your browser cannot play a sound file.
+    </audio>
+</p>
+    {% endif %}
+</div><!-- .div pronunciation container -->
+</div><!-- .div card-4 -->
+<p>&nbsp;</p>
+{% endfor %}
+</div><!-- .div for trans container -->
+    <p class="w3-right-align w3-text-theme">{{ back_message }}</p>
+</div><!-- .div for trans panel -->
+
+<footer class="w3-panel">
+<hr/>
+<p class="w3-small w3-right-align">Web app created by: Anindita Basu (ab.techwriter@gmail.com)</p>
+</footer>
+
+</div><!-- .div for body container -->
+
+<script>
+  document.getElementById("link_id").addEventListener("click", function () {
+    document.getElementById("soundFile").play();
+  });
+</script>
+
+</body>
+
+</html>

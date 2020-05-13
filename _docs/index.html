@@ -1,0 +1,207 @@
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/common.css">
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+<title>Mercury: Translations to English</title>
+
+<meta name="description" content="Mercury: Translations to English. Translate a word, listen to its pronunciation, see example sentences">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<a name="top"></a>
+
+<div class="container">
+<h1>Mercury: Translations to English</h1>
+<p class="lead green">Translate a word, listen to its pronunciation, see example sentences</p>
+<hr/>
+</div><!--./div container lead" -->
+
+<div class="container mt-3">
+<a name="about"></a>
+<!--<h2>About</h2>-->
+<p>Mercury is a web app that uses the Oxford Dictionaries to show you translations of a word that you specify. It also gives you a sound file that you can play to listen to the pronunciation of the English word. Further, Mercury also gives you some example sentences with the English word, so that you can see how to use the word in English sentences.</p>
+</div><!-- /.container (about)-->
+
+<div class="container mt-3">
+<p>To use Mercury, you need API keys from <a href="https://developer.oxforddictionaries.com/" target="_blank">Oxford Dictionaries API</a> and an internet connection. After you've obtained the API keys, you can install Mercury and use it. You don't need any programming knowledge to either install or use Mercury.</p>
+
+<div class="container mt-3 d-flex align-items-center">
+  <div class="media border p-3">
+    <div class="media-body"><p class="font-weight-bold lead green">Demo</p>
+	<video width="540" controls>
+	<source src="./media/demo.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+	</video>
+    </div><!-- /media body -->
+  </div><!-- /media -->
+</div><!-- /container mt-3 -->
+</div><!-- intro and demo -->
+
+<div class="container mt-3">
+<a name="contents"></a>
+<!--<h2>Contents</h2>-->
+<hr/>
+<ul class="list-unstyled ml-3 lead">
+<li><a href="#install">Installing Mercury</a>
+<ul class="list-unstyled ml-3"><li><a href="#python">A. Installing Python and an integrated development environment</a></li>
+<li><a href="#mercury">B. Installing Mercury</a></li>
+<li><a href="#interface">C. Customising Mercury (Optional)</a></li>
+</ul></li>
+<li><a href="#use">Using Mercury</a></li>
+</ul>
+<hr/>
+</div><!-- /.container (toc)-->
+
+<div class="container mt-3">
+<a name="install"></a>
+<h2>Installing Mercury</h2>
+<p>To use Mercury, you need Python. Mercury uses Python 3.7. If you already have Python 3.7 on your computer, jump to step B.7. If you don't, begin with step A.1.</p>
+<a name="python"></a>
+<h3>A. Installing Python and an integrated development environment</h3>
+<ol>
+<li>Go to <code>https://www.python.org/downloads/</code>.</li>
+<li>In the <code>Looking for a specific release</code> section, locate the latest version of Python 3.7. This version will have a name like <code>Python 3.7.5</code> or <code>3.7.7</code>. Click the version.</li>
+<li>Take a minute to read the information on the page. Then, click the installer for your operating system, save the file on your computer, run the file, and follow the on-screen instructions. Make a note of the directory where Python is being installed; you'll need this location in a later step.</li>
+<li>After Python in installed, download a development environment by going to <code>https://www.jetbrains.com/pycharm/download/#section=windows</code>. Click the operating system you use, and click the <b>Download</b> button in the <code>Community</code> section.</li>
+<li>Run the downloaded file and follow the on-screen instructions.</li>
+</ol>
+<p>After Python 3.7 and JetBrains PyCharm Community Edition are installed, you are ready to install Mercury.</p>
+<a name="mercury"></a>
+<h3>B. Installing Mercury</h3>
+<ol>
+<li>Start JetBrains PyCharms and click <b>Create New Project</b>.</li>
+<li>In the <b>Location</b> field, specify the directory where the Mercury files are to be stored. Make a note of this location because you will need it in a later step.</li>
+<li>Expand the <code>Project Interpreter</code> section by clicking the arrow next to it. Select the <b>New environment using</b> option and, from the list, select <b>Pipenv</b>.<br/><img src="./media/jetbrains_new_project.png" alt="user interface for creating a project in JetBrains" class="img-fluid rounded border"/></li>
+<li>For the <code>Basic interpreter</code> field, browse to the location where you installed Python, and select the <code>python.exe</code> file in that directory. If you just installed Python, this is the location you made a note of in step A.3.</li>
+<li>For the <code>Pipenv executable</code> field, browse to the location where you installed Python, go to the <code>Scripts</code> directory, and select the <code>pipenv.exe</code> file.</li>
+<li>Click <b>Create</b>. A project is created, and opened for you to work in.</li>
+<li>Open an browser and go to <code>GitHub URL</code>. Click the arrow next to the <b>Clone or download</b> button and save the <code>.zip</code> file on your computer.</li>
+<li>Open file explorer, and extract the contents of the <code>.zip</code> file. Select all of the extracted files, and press CTRL+C.</li>
+<li>In file explorer, go to the directory for the Mercury files. This is the location you specified in step B.2. Press CTRL+V. If you get a message for overwriting any files, overwrite them.</li>
+<li>Return to the JetBrains PyCharm interface. You'll notice that the <code>Project</code> tree on the left now has all the files that you copied over in the previous step.</li>
+<li>Open the <code>static</code> &gt; <code>config.json</code> file. Replace the three dots for <code>app_id</code> and <code>app_key</code> with your Oxford API credentials. Replace the three dots for <code>source_language</code> with the code for the language for which you need English translations <a href="#" data-toggle="modal" data-target="#languages" class="text-primary">(see language codes)</a>. Save the <code>config.json</code> file.</li>
+<li>Right-click the <code>mercury.py</code> file and click <b>Run 'mercury'</b>. A console opens at the bottom of the screen and you should see something similar to this image.<br/><img src="./media/mercury_running.png" title="image showing the output when mercury is run" class="img-fluid rounded border"/><br/>This means the Mercury installation was successful.</li>
+<li>On the console, click <code>http://127.0.0.1:5000/</code>. A browser page opens to show the Mercury interface.</li>
+<li>Return to JetBrains Pycharm. Stop Mercury by clicking the red square in the leftmost section of the console.</li>
+</ol>
+<a name="interface"></a>
+<h3>C. Customising Mercury (Optional)</h3>
+<p>The user interface of Mercury is in English. You can change the text to your language.</p>
+<ol>
+<li>Open the <code>static</code> &gt; <code>interface.json</code> file. You see the words and sentences that are used for the Mercury interface. Replace these with your own. Be careful about not changing anything to the left of the colon (<code>:</code>). You can change the text to the right of the colon. Also be careful about not deleting any commas (<code>,</code>), quotation marks (<code>"</code>), or braces (<code>{</code> and <code>}</code>).</li>
+<li>Run Mercury and go to <code>http://127.0.0.1:5000/</code>. You should see your own text now. Return to JetBrains Pycharm and stop Mercury.</li>
+</ol>
+</div><!-- /.container (install)-->
+
+<div class="container mt-3">
+<a name="use"></a>
+<h2>Using Mercury</h2>
+<ol>
+<li>Open a browser and go to <code>http://127.0.0.1:5000/</code>.</li>
+<li>Enter the word to be translated. Make sure you use the native language script for entering the word. For example, if you are translating from Urdu, enter <code>ترجمہ</code> in the Nastalikh script instead of entering the English transliterated <code>tarjuma</code> in the Roman script.</li>
+<li>Click <b>Translate</b>. You are taken to the page that shows you the translations and example sentences. If the translated word has a pronunciation guide, the sound file is also included for you to listen to.</li>
+</ol>
+</div><!-- /.container (use)-->
+
+<div class="container mt-3">
+<hr/>
+<footer class="small">
+<p><a href="#" data-toggle="modal" data-target="#contact" class="text-primary">Created by: Anindita Basu</a></p>
+</footer>
+</div><!-- /.container (footer)-->
+
+<div class="container">
+  <!-- The modal -->
+  <div class="modal" id="languages">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <!-- Modal header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Language Codes</h5>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div><!-- /modal header -->
+        <!-- Modal body -->
+        <div class="modal-body">
+		  <ul>
+            <li>Spanish: <code>es</code></li>
+			<li>Malay: <code>ms</code></li>
+			<li>Indonesian: <code>id</code></li>
+			<li>Italian: <code>it</code></li>
+			<li>Setswana: <code>tn</code></li>
+			<li>German: <code>de</code></li>
+			<li>Portuguese: <code>pt</code></li>
+			<li>Greek: <code>el</code></li>
+			<li>Tatar: <code>tt</code></li>
+			<li>Tok Pisin: <code>tpi</code></li>
+			<li>Turkmen: <code>tk</code></li>
+			<li>Chinese: <code>zh</code></li>
+			<li>Marathi: <code>mr</code></li>
+			<li>Russian: <code>ru</code></li>
+			<li>Arabic: <code>ar</code></li>
+			<li>Northern Sotho: <code>nso</code></li>
+			<li>isiXhosa: <code>xh</code></li>
+			<li>isiZulu: <code>zu</code></li>
+			<li>Urdu: <code>ur</code></li>
+			<li>Quechua: <code>qu</code></li>
+			<li>Telugu: <code>te</code></li>
+          </ul>
+		<p>For the latest list of codes, see <a href="https://developer.oxforddictionaries.com/documentation/languages" target = "_blank">Supported languages</a>.</p>  
+        </div><!-- /modal body -->
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div><!-- /modal footer -->
+      </div><!-- /modal content -->
+    </div><!-- /modal dialog -->
+  </div><!-- /modal -->
+</div><!-- /container for Contact modal -->
+
+<div class="container">
+  <!-- The modal -->
+  <div class="modal" id="contact">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <!-- Modal header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Contact</h5>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div><!-- /modal header -->
+        <!-- Modal body -->
+        <div class="modal-body">
+		  <ul>
+            <li><a href="https://twitter.com/anindita_basu" target="_blank">https://twitter.com/anindita_basu</a></li>
+            <li>ab.techwriter@gmail.com</li>
+          </ul>
+        </div><!-- /modal body -->
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div><!-- /modal footer -->
+      </div><!-- /modal content -->
+    </div><!-- /modal dialog -->
+  </div><!-- /modal -->
+</div><!-- /container for Contact modal -->
+
+</body>
+
+</html>

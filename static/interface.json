@@ -1,0 +1,11 @@
+{
+  "title": "Mercury",
+  "language_pair": "Translations to English",
+  "translate_label": "Enter a word",
+  "translate_button": "Translate",
+  "translation_error": "There was an error. Go back to the previous page and try with another word.",
+  "audio_error": "Your browser cannot play a sound file.",
+  "back_message": "For another word, go back to the previous page by using the Back button.",
+  "example_sentences": "Example sentences",
+  "pronunciation": "Pronunciation"
+}
