@@ -14,7 +14,7 @@ The app runs on Python, but you don't need to know Python to use the app or to c
 
 ### Prerequisites
 
-You need an API key from [Oxford Dictionaries API](https://developer.oxforddictionaries.com/). The free plan is adequate for testing purposes but, for translations, you need a paid plan.
+You need a paid API key from [Oxford Dictionaries API](https://developer.oxforddictionaries.com/). The free plan is adequate for testing purposes but only for the monolingual dictionary; for translations, you need the paid plan.
 
 ### Steps
 
