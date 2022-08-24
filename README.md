@@ -1,3 +1,8 @@
+__The code in this repo is no longer being maintained, and will not work with the current version of the Oxford Dictionaries API.__
+
+<hr/>
+
+
 # Mercury
 
 Mercury is a customisable web app that uses the Oxford Dictionaries API to translate words to English. You enter a word in your language, and are shown a list of their English counterparts and how to pronounce them, together with examples to show how to use the words in English sentences.
